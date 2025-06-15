@@ -1,0 +1,45 @@
+{
+  "workExperience": [
+    {
+      "logo": "/assets/images/evva-logo.png",
+      "title": "AI Engineer Intern",
+      "company": "Evva Health",
+      "start_date": "Oct 2024",
+      "end_date": "Mar 2025",
+      "roledesc": "Worked as an AI Engineer Intern on NLP and multimodal agent systems. Built and deployed LLM-driven FastAPI services, integrated vector DBs for retrieval, optimized prompt engineering and model routing, reduced latency and token usage, implemented voice-text pipelines, automated care plan generation via web scraping agents, and fine-tuned agents for health session monitoring.",
+      "skills": ["Python", "FastAPI", "MongoDB", "PostgreSQL", "OpenAI API", "Playwright", "ScrapeGraphAI"]
+    },
+    {
+      "logo": "/assets/images/letsai-logo.png",
+      "title": "AI Engineer Intern",
+      "company": "LetsAI Solutions",
+      "start_date": "Mar 2025",
+      "end_date": "Present",
+      "roledesc": "Working as an AI Intern focusing on enhancing enterprise-grade agentic AI systems. Integrating and improving tools like CrewAI, Autogen, and Langflow to build scalable multi-agent architectures. Developing FastAPI backends and managing data storage with PostgreSQL and ChromaDB. Implementing LLM observability and traceability features to optimize A/B testing and decision transparency. Collaborating on system enhancements to improve AI agent performance and reliability.",
+      "skills": ["Python", "FastAPI", "CrewAI", "Autogen", "Langflow", "ChromaDB", "PostgreSQL", "Alembic"]
+    }
+  ],
+  "blogData": [
+    {
+      "title": "Why India has a steep dempgraphic dividend?",
+      "desc": "Let's learn Demographic Dividend in 2 mins.",
+      "date_posted": "December 21, 2024",
+      "tags": ["India", "Culture"],
+      "slug": "cant-beat-oauth2"
+    },
+    {
+      "title": "Automate the boring stuff",
+      "desc": "Organize screenshots with python and a dash of AI",
+      "date_posted": "February 25, 2025",
+      "tags": ["python", "automation"],
+      "slug": "automate-the-boring-stuff"
+    },
+    {
+      "title": "Can't beat OAuth2",
+      "desc": "Let's learn open authentication (OAuth) in 2 mins.",
+      "date_posted": "December 21, 2024",
+      "tags": ["security", "web"],
+      "slug": "cant-beat-oauth2"
+    }
+  ]
+}
