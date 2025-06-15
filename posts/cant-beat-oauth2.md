@@ -104,7 +104,7 @@ import BlogHeader from '../app/components/BlogHeader'
 </blockquote>
 
 <div className="mt-10 mb-4">
-<h1 className="m-0 p-0">**Why do we need it?**</h1>
+<h1 className="m-0 p-0">Why do we need it?</h1>
 </div>
 
 Keeping it very short! To best understand the need of such a protocol we should look at how it helps us in our daily internet lives.
@@ -113,7 +113,7 @@ Imagine visiting a website that requires credentials before you can access its w
 All this couldn't have had happened without our darling OAuth protocol 🥂.
 
 <div className="mt-6 mb-2">
-<h2 className="m-0 p-0">**Authorization is not authentication**</h2>
+<h2 className="m-0 p-0">Authorization is not authentication</h2>
 </div>
 At this point, you might have got some idea about OAuth. I would like to make it clear that OAuth is not an authentication technique it is an <span className="underline">**authorization**</span> technique. You might need to authenticate yourself to grant the necessary permissions but OAuth as a protocol does not care about authentication.
 To understand the difference between **<ins>authentication</ins>** and <ins>**authorization**</ins>, consider what questions they ask individually.
@@ -131,7 +131,7 @@ So, Oauth just questions the **"What"** part of our security equation. **"Who"**
 </blockquote>
 
 <div className="mt-10 mb-4">
-<h1 className="m-0 p-0">**How does it work?**</h1>
+<h1 className="m-0 p-0">How does it work?</h1>
 </div>
 To explain in simple terms, we will take an example of the classic cryptography duo, Alice and Bob. Let's say Alice wants to view Bob's progress in the gym and decides to ask the gym for this information. It is important that the gym knows whether Alice is allowed to view the progress data. To tackle this, Bob can ask the gym to assign Alice a token that will serve as a testament to the fact that Bob has allowed Alice to view specific data on his behalf.
 For all my visual learners, **Take a look at the image below**.
@@ -169,7 +169,7 @@ I hope the image does help you with your understanding of this protocol. I would
 </blockquote>
 
 <div className="mt-10 mb-2">
-<h1 className="m-0 p-0">**Next part....**</h1>
+<h1 className="m-0 p-0">Next part....</h1>
 </div>
 
 I would love to go over the code implementation of OAuth in <ins>**2 mins**</ins>. We will see what our sample **<ins>request</ins>** and **<ins>response</ins>** contains. My choice would be a javascript based auth library, <a className="underline text-hyperlink" href="https://www.authjs.dev">authjs.dev</a> . It makes OAuth insanely simple and intuitive.

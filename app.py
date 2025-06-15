@@ -33,7 +33,7 @@ def create_navbar(pathname):
                         [
                             html.Span('/', className='portfolio-nav-separator'),
                             dcc.Link('home', href='/', className=is_active('/')),
-                            html.Span('/', className='portfolio-nav-separator'),
+                            html.Span('/', className='portfolio-nav-separator', style={'marginLeft': '0.125rem'}),
                             dcc.Link('writings', href='/blog', className=is_active('/blog'))
                         ],
                         className='portfolio-nav-links'

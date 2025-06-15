@@ -47,16 +47,16 @@ layout = html.Div([
         )
     ], className='portfolio-section', style={'marginTop': '0'}),
     html.Div([
-        html.H2("Work Experience", className='text-3xl font-semibold margin-bottom-md'),
+        html.H2("Work Experience", className='text-3xl font-semibold margin-bottom-xs'),
         html.Div([ExperienceTile(exp) for exp in data.get('workExperience', [])], className='portfolio-experience-card'),
         html.Div(style={'height': '64px'}),
     ], className='portfolio-section margin-bottom-xl'),
     html.Div([
-        html.H2("Recent Writings", className='text-3xl font-semibold margin-bottom-md'),
+        html.H2("Recent Writings", className='text-3xl font-semibold margin-bottom-xs'),
         html.Div(
             [BlogTile(blog, show_tags=False) for blog in recent_blogs if 'title' in blog] if recent_blogs else 
             [html.P("No blog posts available.", className='text-medium text-gray-400 portfolio-blog-post')],
-            className='portfolio-blog-card'
+            className='portfolio-blog-card', style={'marginTop': '0'}
         ),
         html.Div(
             html.A([

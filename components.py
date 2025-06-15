@@ -78,7 +78,7 @@ def SocialTiles():
         ),
         html.A(
             DashIconify(icon="lucide:file", width=18, height=18),
-            href="/Resume.pdf",
+            href="assets/Resume.pdf",
             className='portfolio-social-link'
         ),
         html.A(
