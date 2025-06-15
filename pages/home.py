@@ -2,24 +2,25 @@ import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 import json
-from datetime import datetime
+from utils import load_markdown_posts
 from components import BlogTile, ExperienceTile, SocialTiles
 import dash_svg as svg
 
-# Load data from JSON file
+# Load work experience data from JSON file
 try:
     with open('public/data.json', 'r') as f:
         data = json.load(f)
 except Exception as e:
     print(f"Error loading data.json: {e}")
-    data = {'workExperience': [], 'blogData': []}
+    data = {'workExperience': []}
 
-# Sort blog data by date
-recent_blogs = sorted(
-    data.get('blogData', []),
-    key=lambda x: datetime.strptime(x.get('date_posted', 'January 1, 1900'), '%B %d, %Y'),
-    reverse=True
-)[:2]
+# Load recent blog posts
+recent_blogs = load_markdown_posts()[:2]
+
+# Log blog posts for debugging
+for blog in recent_blogs:
+    if 'title' not in blog:
+        print(f"Invalid blog post missing title: {blog}")
 
 # Home page layout
 layout = html.Div([
@@ -53,7 +54,7 @@ layout = html.Div([
     html.Div([
         html.H2("Recent Writings", className='text-3xl font-semibold margin-bottom-md'),
         html.Div(
-            [BlogTile(blog, show_tags=False) for blog in recent_blogs] if recent_blogs else 
+            [BlogTile(blog, show_tags=False) for blog in recent_blogs if 'title' in blog] if recent_blogs else 
             [html.P("No blog posts available.", className='text-medium text-gray-400 portfolio-blog-post')],
             className='portfolio-blog-card'
         ),
@@ -78,7 +79,7 @@ layout = html.Div([
     html.Div([
         html.H2("Get in touch", className='text-3xl font-semibold margin-bottom-md'),
         html.P(
-            "I am actively seeking Summer 2025 internship opportunities to further expand my skills in software engineering. Feel free to reach out at sarthak.chauhan@sjsu.edu—let's connect!",
+            "If you’re building something cool where my skills can be of some use or just want to nerd out over philosophy and machine learning, hit me up at lakhaniaditya3@gmail.com — always up for a good chat (or a questionable karaoke session).",
             className='text-medium margin-bottom-md'
         )
     ], className='portfolio-section margin-bottom-xl')

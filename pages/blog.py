@@ -1,37 +1,33 @@
 import dash
 from dash import html, dcc, Input, Output, callback
 import dash_bootstrap_components as dbc
-import json
-from datetime import datetime
+from utils import load_markdown_posts
 from components import BlogTile
 
 app = dash.Dash(__name__)
 
 # Load and sort blog data
-try:
-    with open('public/data.json', 'r') as f:
-        data = json.load(f)
-except Exception as e:
-    print(f"Error loading data.json: {e}")
-    data = {'blogData': []}
-
-blog_data = sorted(
-    data.get('blogData', []),
-    key=lambda x: datetime.strptime(x.get('date_posted', 'January 1, 1900'), '%B %d, %Y'),
-    reverse=True
-)
+blog_data = load_markdown_posts()
 all_tags = ['All'] + sorted(set(tag for blog in blog_data for tag in blog.get('tags', [])))
 
 # Blog page layout
 layout = html.Div([
-    html.H2("Recent Writings", className='text-3xl font-semibold margin-bottom-md'),
+    html.Div([
+    html.H2("Recent Writings", className='text-3xl font-semibold', style={'margin': '0'}),
     dcc.Dropdown(
         id='tag-filter',
         options=[{'label': tag, 'value': tag} for tag in all_tags],
         value='All',
-        className='portfolio-blog-filter margin-bottom-md'
-    ),
-    html.Div(id='blog-list', className='portfolio-section margin-bottom-xl')
+        className='portfolio-blog-filter'
+    )
+    ], style={
+        'display': 'flex',
+        'justifyContent': 'space-between',
+        'alignItems': 'center',
+        'flexWrap': 'wrap',  # Optional: helps on smaller screens
+    }),  # Optional container for better stacking
+    
+    html.Div(id='blog-list', className='portfolio-section margin-bottom-xl', style={'marginTop': '16px'})
 ])
 
 @callback(

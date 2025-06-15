@@ -27,7 +27,8 @@ def BlogTile(blog, show_tags=True):
                     className='portfolio-blog-tag'
                 ) for tag in blog.get('tags', [])
             ] if show_tags else [],
-            className='flex-gap-xs'
+            className='flex-gap-sm',
+            style={'marginTop': '0.5rem'}
         )
     ], className='portfolio-blog-card')
 
@@ -35,28 +36,36 @@ def ExperienceTile(work):
     """Component for rendering an experience tile, consistent with ExperienceTile.jsx"""
     return html.Div([
         html.Div([
-            html.P(
-                f"{work['start_date']} - {work['end_date']}",
-                className='portfolio-experience-date portfolio-timeline'
+            # Optional company logo
+            html.Img(
+                src=work.get('logo', ''),
+                className='portfolio-experience-logo',
+                style={'display': 'block' if work.get('logo') else 'none'}
             ),
-            html.H3(
-                f"{work['title']}, {work['company']}",
-                className='portfolio-experience-title'
-            ),
-            html.P(
-                work['roledesc'],
-                className='portfolio-experience-desc'
-            ),
-            html.Div(
-                [
-                    html.Span(
-                        skill,
-                        className='portfolio-experience-skill'
-                    ) for skill in work.get('skills', [])
-                ],
-                className='portfolio-experience-skills'
-            )
-        ], className='portfolio-experience-content')
+            html.Div([
+                html.P(
+                    f"{work['start_date']} - {work['end_date']}",
+                    className='portfolio-experience-date portfolio-timeline'
+                ),
+                html.H3(
+                    f"{work['title']}, {work['company']}",
+                    className='portfolio-experience-title'
+                ),
+                html.P(
+                    work['roledesc'],
+                    className='portfolio-experience-desc'
+                ),
+                html.Div(
+                    [
+                        html.Span(
+                            skill,
+                            className='portfolio-experience-skill'
+                        ) for skill in work.get('skills', [])
+                    ],
+                    className='portfolio-experience-skills'
+                )
+            ], className='portfolio-experience-content')
+        ], className='portfolio-experience-card-content')
     ], className='portfolio-experience-card')
 
 def SocialTiles():

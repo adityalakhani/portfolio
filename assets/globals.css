@@ -60,28 +60,24 @@ html, body {
 }
 
 /* Navigation link */
+/* Navigation link base */
 .portfolio-nav-link {
     font-size: 1.125rem;
-    color: #ffffff;
-    transition: color 0.3s;
+    color: #9ca3af; /* Default gray: rgb(156, 163, 175) */
+    transition: color 0.2s;
     letter-spacing: 0.05em;
     font-weight: 400;
+    text-decoration: none;
 }
 
 .portfolio-nav-link:hover {
     color: #ffffff;
 }
 
-.portfolio-nav-link-gray {
-    font-size: 1.125rem;
-    color: #9ca3af;
-    transition: color 0.3s;
-    letter-spacing: 0.05em;
-    font-weight: 400;
-}
-
-.portfolio-nav-link-gray:hover {
+/* Active link override */
+.portfolio-nav-link.active {
     color: #ffffff;
+    font-weight: 500;
 }
 
 /* Social links container */
@@ -95,7 +91,7 @@ html, body {
 /* Social link */
 .portfolio-social-link {
     color: #9ca3af;
-    transition: color 0.3s;
+    transition: color 0.2s;
     display: inline-block;
 }
 
@@ -151,7 +147,7 @@ html, body {
 
 /* Other utilities */
 .letter-spacing-wide { letter-spacing: 0.05em; }
-.transition-colors { transition-property: color; transition-duration: 0.3s; }
+.transition-colors { transition-property: color; transition-duration: 0.2s; }
 
 /* Profile picture */
 .portfolio-profile-pic {
@@ -175,13 +171,115 @@ html, body {
 }
 
 .portfolio-blog-card {
-    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.25rem;
+    margin-top: 24px;
     border-radius: 8px;
 }
 
 /* Blog post */
 .portfolio-blog-post {
     margin-top: 2.5rem;
+}
+
+/* Blog content */
+.portfolio-blog-content {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #ffffff;
+}
+
+.portfolio-blog-content h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.portfolio-blog-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+}
+
+.portfolio-blog-content p {
+    margin-bottom: 1rem;
+    color: #d1d5db;
+}
+
+.portfolio-blog-content ul, .portfolio-blog-content ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    color: #d1d5db;
+}
+
+.portfolio-blog-content li {
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-blog-content code {
+    background-color: #374151;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #ffffff;
+}
+
+.portfolio-blog-content pre {
+    background-color: #374151;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #ffffff;
+}
+
+.portfolio-blog-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+.portfolio-blog-content blockquote {
+    border-left: 4px solid #79c0ff;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    color: #d1d5db;
+}
+
+.portfolio-blog-content hr {
+    border: 0;
+    border-top: 1px solid #4b5563;
+    margin: 1.5rem 0;
+}
+
+.portfolio-blog-content a {
+    color: #79c0ff;
+    text-decoration: none;
+}
+
+.portfolio-blog-content a:hover {
+    text-decoration: underline;
+}
+
+.portfolio-blog-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.portfolio-blog-content th, .portfolio-blog-content td {
+    border: 1px solid #4b5563;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.portfolio-blog-content th {
+    background-color: #374151;
+    font-weight: 600;
 }
 
 /* Blog tile styles */
@@ -268,7 +366,7 @@ html, body {
 }
 
 .portfolio-experience-date {
-    font-size: 10px;
+    font-size: 12px;
     opacity: 0.7;
     margin: 0;
     font-family: var(--font-inter, Inter, sans-serif);
@@ -324,19 +422,112 @@ html, body {
 
 /* Dropdown for blog filter */
 .portfolio-blog-filter {
+    width: 120px;
+    height: 2.25rem; /* 36px */
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 9999px;
+    padding-left: 0.75rem;  /* 12px */
+    padding-right: 2rem;    /* for space after text */
+    font-size: 0.875rem;    /* 14px */
+    line-height: 1.25rem;   /* 20px */
+    font-family: var(--font-inter), sans-serif;
+    color: rgba(255, 255, 255);
     cursor: pointer;
     appearance: none;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: white;
-    padding: 0.5rem 2rem 0.5rem 1rem;
-    border-radius: 9999px;
-    width: 120px;
-    height: 36px;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.2s;
+    position: relative;
 }
 
+/* HOVER & FOCUS STATES */
 .portfolio-blog-filter:hover {
     border-color: white;
+    color: rgba(255, 255, 255, 1);
+}
+
+/* SELECT CONTROL OVERRIDE */
+.portfolio-blog-filter .Select-control {
+    color: rgba(255, 255, 255, 0.95);
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    box-shadow: none !important;
+    padding: 0;
+    min-height: unset;
+    height: 2.25rem;
+}
+
+/* SELECT VALUE */
+.portfolio-blog-filter .Select-value-label {
+    color: rgba(255, 255, 255, 1);
+    line-height: 2.25rem;
+}
+
+/* ARROW CUSTOMIZATION — REMOVE DEFAULT */
+.portfolio-blog-filter .Select-arrow-zone {
+    display: none;
+}
+
+/* CUSTOM CHEVRON ICON */
+.portfolio-blog-filter::after {
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1rem 1rem;
+    opacity: 0.5;
+}
+
+/* DROPDOWN MENU */
+.portfolio-blog-filter .Select-menu-outer {
+    background-color: #111010;
+    border-radius: 8px;
+    margin-top: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+    color: white;
+}
+
+/* DROPDOWN OPTIONS */
+.portfolio-blog-filter .Select-option {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.portfolio-blog-filter .Select-option:hover,
+.portfolio-blog-filter .Select-option.is-focused {
+    background-color: #374151;
+}
+
+.portfolio-blog-filter.has-value.Select--single > .Select-control .Select-value .Select-value-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* SELECTED OPTION */
+.portfolio-blog-filter .Select-option.is-selected {
+    background-color: #374151;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* REMOVE CLEAR ICON */
+.portfolio-blog-filter .Select-clear-zone {
+    display: none;
+}
+
+/* PLACEHOLDER STYLING */
+.portfolio-blog-filter .Select-placeholder {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Button style for Checkout all blogs */
@@ -373,14 +564,14 @@ html, body {
     background-color: #374151;
 }
 
+.portfolio-button-div {
+    margin-top: 16px;
+}
+
 .portfolio-button-icon {
     margin-left: 0.5rem;
     display: inline-flex;
     align-items: center;
-}
-
-.portfolio-button-div {
-    margin-top: 16px;
 }
 
 /* Responsive design */

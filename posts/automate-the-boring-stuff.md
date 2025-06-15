@@ -1,9 +1,20 @@
+---
+title: Automate the Boring Stuff
+desc: Organize screenshots with python and a dash of AI
+date_posted: February 25, 2025
+tags: [python, automation]
+slug: automate-the-boring-stuff
+---
 
-title: Automate the boring stuffdesc: Organize screenshots with python and a dash of AIdate_posted: February 25, 2025tags: [python, automation]slug: automate-the-boring-stuff
-Automate the Boring Stuff
+# Automate the Boring Stuff
+
 Tired of organizing screenshots manually? Let's automate it with Python and a sprinkle of AI!
-Step 1: Organize Files
-Use Python's os module to scan a directory and move screenshots to folders based on their creation date.
+
+## Step 1: Organize Files
+
+Use Python's `os` module to scan a directory and move screenshots to folders based on their creation date.
+
+```python
 import os
 import shutil
 from datetime import datetime
@@ -19,9 +30,13 @@ def organize_screenshots(directory):
             shutil.move(filepath, os.path.join(dest_folder, filename))
 
 organize_screenshots("/path/to/screenshots")
+```
 
-Step 2: Add AI for Tagging
+## Step 2: Add AI for Tagging
+
 Use an AI model (e.g., via OpenAI API) to generate tags for each screenshot based on its content.
+
+```python
 import openai
 
 def tag_screenshot(image_path):
@@ -32,5 +47,6 @@ def tag_screenshot(image_path):
     )
     tags = response['data'][0]['text'].split(',')
     return [tag.strip() for tag in tags]
+```
 
 Automate your workflow and save time!
