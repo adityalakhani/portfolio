@@ -90,11 +90,16 @@ def display_page(pathname):
         blog_post = next((b for b in blog_posts if b['slug'] == slug), None)
         if blog_post:
             return navbar, html.Div([
-                html.H1(blog_post['title'], className='text-4xl font-bold margin-bottom-md'),
-                html.P(f"Posted on: {blog_post['date_posted']}", className='text-small text-gray-400 margin-bottom-sm'),
-                html.P(blog_post['desc'], className='text-large margin-bottom-md'),
+                html.Div([
+                    html.P(f"{blog_post['date_posted']}", className='portfolio-blog-header-date'),
+                    html.H1(blog_post['title'], className='portfolio-blog-header-title'),
+                    html.P(blog_post['desc'], className='portfolio-blog-header-slug'),
+                    html.Div([
+                        html.Span(f"{tag}", className='portfolio-blog-tag') for tag in blog_post.get('tags', [])
+                    ], className='portfolio-blog-header-tags')
+                ], className='portfolio-blog-header'),
                 dcc.Markdown(blog_post['content'], className='portfolio-blog-content', dangerously_allow_html=True)
-            ], className='portfolio-blog-post')
+            ], className='portfolio-blog-post', style={'marginTop': '-50px'})
         return navbar, html.Div("404 - Not Found", className='text-xl text-center')
 
     return navbar, home.layout
