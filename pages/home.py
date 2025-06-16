@@ -79,7 +79,7 @@ layout = html.Div([
     html.Div([
         html.H2("Get in touch", className='text-3xl font-semibold margin-bottom-md'),
         html.P(
-            "If you’re building something cool where my skills can be of some use or just want to nerd out over philosophy and machine learning, hit me up at lakhaniaditya3@gmail.com — always up for a good chat (or a questionable karaoke session).",
+            "If you’re building something cool where my skills can be of some use or just want to nerd out over philosophy and machine learning, hit me up at lakhaniaditya3@gmail.com - always up for a good chat (or a questionable karaoke session).",
             className='text-medium margin-bottom-md'
         )
     ], className='portfolio-section margin-bottom-xl')

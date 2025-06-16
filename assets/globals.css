@@ -322,15 +322,16 @@ html, body {
 }
 
 .portfolio-blog-content code {
-    background-color: #374151;
+    background-color: transparent;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
     color: #ffffff;
 }
 
 .portfolio-blog-content pre {
-    background-color: #374151;
+    background-color: transparent;
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
@@ -688,4 +689,171 @@ html, body {
 /* Timeline opacity */
 .portfolio-timeline {
     opacity: 0.7;
+}
+
+.portfolio-blog-content code{
+    background-color: hsla(0, 0%, 100%, .1);
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: rgb(210, 168, 255);
+    font-size: 0.875rem;
+}
+
+.portfolio-blog-content pre {
+    background-color: transparent;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #ffffff;
+    position: relative;
+}
+
+.portfolio-blog-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+.portfolio-blog-content blockquote {
+    border-left: 4px solid #79c0ff;
+    padding-left: 1rem;
+    color: #d1d5db;
+}
+
+.portfolio-blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.code-snippet-pre {
+    background-color: #0d1117;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #ffffff;
+    position: relative;
+}
+
+.code-snippet-code {
+    margin: 0;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    border-radius: 0.125rem;
+    font-size: 0.75rem;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.copy-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.hljs {
+    color: #c9d1d9;
+    background: #000;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+    color: #ff7b72;
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+    color: #d2a8ff;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+    color: #79c0ff;
+}
+
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+    color: #a5d6ff;
+}
+
+.hljs-built_in,
+.hljs-symbol {
+    color: #ffa657;
+}
+
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+    color: #8b949e;
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+    color: #7ee787;
+}
+
+.hljs-subst {
+    color: #c9d1d9;
+}
+
+.hljs-section {
+    color: #1f6feb;
+    font-weight: bold;
+}
+
+.hljs-bullet {
+    color: #f2cc60;
+}
+
+.hljs-emphasis {
+    color: #c9d1d9;
+    font-style: italic;
+}
+
+.hljs-strong {
+    color: #c9d1d9;
+    font-weight: bold;
+}
+
+.hljs-addition {
+    color: #aff5b4;
+    background-color: #033a16;
+}
+
+.hljs-deletion {
+    color: #ffdcd7;
+    background-color: #67060c;
 }

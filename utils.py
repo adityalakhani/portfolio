@@ -4,7 +4,6 @@ import frontmatter
 from datetime import datetime
 
 def load_markdown_posts(posts_dir='posts'):
-    """Load and parse Markdown files from the posts directory."""
     posts = []
     if not os.path.exists(posts_dir):
         print(f"Posts directory '{posts_dir}' not found.")
@@ -19,6 +18,10 @@ def load_markdown_posts(posts_dir='posts'):
         'slug': ''
     }
 
+    # Regular expression to find code blocks
+    import re
+    code_block_pattern = re.compile(r'```(\w*)\n([\s\S]*?)\n```')
+
     for filename in os.listdir(posts_dir):
         if filename.endswith('.md'):
             filepath = os.path.join(posts_dir, filename)
@@ -28,36 +31,43 @@ def load_markdown_posts(posts_dir='posts'):
                     post = frontmatter.loads(raw_content)
                     metadata = post.metadata
 
-                    # Log raw content if metadata is empty
                     if not metadata:
-                        print(f"Empty metadata in {filename}: Likely malformed YAML or missing '---'.")
-                        print(f"Raw content (first 200 chars):\n{raw_content[:200]}...")
+                        print(f"Empty metadata in {filename}: Likely malformed YAML.")
                         continue
 
-                    # Validate required fields, apply defaults
                     for field in required_fields:
                         if field not in metadata:
-                            print(f"Warning: {filename} missing field '{field}'. Using default: {default_values[field]}")
+                            print(f"Warning: {filename} missing '{field}'. Using default.")
                             metadata[field] = default_values[field]
 
-                    # Ensure tags is a list
                     if not isinstance(metadata.get('tags', []), list):
-                        print(f"Warning: {filename} 'tags' is not a list. Using default: []")
                         metadata['tags'] = default_values['tags']
-
-                    # Set default slug if not provided
                     if not metadata['slug']:
-                        metadata['slug'] = filename[:-3]  # Use filename without .md
+                        metadata['slug'] = filename[:-3]
 
-                    # Store raw Markdown content instead of converting to HTML
-                    metadata['content'] = post.content
+                    # Split content into text and code blocks
+                    content_parts = []
+                    last_pos = 0
+                    for match in code_block_pattern.finditer(post.content):
+                        start, end = match.span()
+                        # Add text before the code block
+                        if last_pos < start:
+                            content_parts.append({'type': 'text', 'content': post.content[last_pos:start]})
+                        # Add the code block
+                        language = match.group(1) or 'text'
+                        code = match.group(2).strip()
+                        content_parts.append({'type': 'code', 'language': language, 'content': code})
+                        last_pos = end
+                    # Add remaining text
+                    if last_pos < len(post.content):
+                        content_parts.append({'type': 'text', 'content': post.content[last_pos:]})
+
+                    metadata['content_parts'] = content_parts
                     posts.append(metadata)
             except Exception as e:
                 print(f"Error processing {filename}: {e}")
-                print(f"Raw content (first 200 chars):\n{raw_content[:200]}...")
                 continue
 
-    # Sort posts by date_posted in descending order
     try:
         return sorted(
             posts,
