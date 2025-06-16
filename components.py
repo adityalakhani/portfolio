@@ -39,6 +39,8 @@ def SocialTiles():
 def CodeSnippet(code, language='text', id_prefix='code-snippet'):
     import uuid
     unique_id = str(uuid.uuid4())
+    # Include language as a styled span in Markdown content
+    markdown_content = f'<span class="code-snippet-language">{language}</span>\n```{language}\n{code}\n```'
     return html.Div([
         dcc.Store(id={'type': 'code-content', 'index': unique_id}, data=code),
         dcc.Store(id={'type': 'clipboard', 'index': unique_id}, data=code),
@@ -51,16 +53,17 @@ def CodeSnippet(code, language='text', id_prefix='code-snippet'):
         ),
         html.Pre([
             dcc.Markdown(
-                f"```{language}\n{code}\n```",
+                markdown_content,
                 className='code-snippet-code',
                 highlight_config={'theme': 'dark'},
-                style={'margin': 0, 'border': '0.5px solid white', 'border-radius': '0', 'padding': '0'}
+                style={'margin': 0, 'border': '0.1px solid white', 'border-radius': '0', 'padding': '0'},
+                dangerously_allow_html=True
             ),
             html.Button([
                 DashIconify(icon="lucide:copy", width=16, height=16, className='copy-icon'),
                 html.Span('Copy', className='copy-text', style={'display': 'none'})
             ], id={'type': 'copy-button', 'index': unique_id}, className='copy-button')
-        ], className='code-snippet-pre', style={'margin': '0', 'padding': '0'}),
+        ], className='code-snippet-pre', style={'margin': '0', 'padding': '0'})
     ], className='code-snippet', style={'margin': '0', 'padding': '0'})
 
 @callback(
