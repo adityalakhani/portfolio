@@ -74,7 +74,7 @@ layout = html.Div([
                 stroke="currentColor",
                 className="lucide lucide-arrow-up-right")
             , className='portfolio-button-icon')
-        ], href='/blog', className='portfolio-button margin-bottom-md'), className='portfolio-button-div')
+        ], href='/blog', className='portfolio-button'), className='portfolio-button-div')
     ], className='portfolio-section margin-bottom-xl'),
     html.Div([
         html.H2("Get in touch", className='text-3xl font-semibold margin-bottom-md'),

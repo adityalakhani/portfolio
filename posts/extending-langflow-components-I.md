@@ -1,8 +1,8 @@
 ---
 title: Extending Langflow Components - Part I
 desc: Let's explore the new age No-Code AI workflow orchestrator.
-date_posted: June 16, 2025
-tags: [Python, No-Code, AI]
+date_posted: April 19, 2025 • 3 min read
+tags: [LangFlow, No-Code, Agentic AI, Python]
 slug: extending-langflow-components
 ---
 

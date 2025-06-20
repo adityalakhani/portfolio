@@ -1,22 +1,22 @@
 {
   "workExperience": [
     {
-      "logo": "/assets/images/evva-logo.png",
-      "title": "AI Engineer Intern",
-      "company": "Evva Health",
-      "start_date": "Oct 2024",
-      "end_date": "Mar 2025",
-      "roledesc": "Worked as an AI Engineer Intern on NLP and multimodal agent systems. Built and deployed LLM-driven FastAPI services, integrated vector DBs for retrieval, optimized prompt engineering and model routing, reduced latency and token usage, implemented voice-text pipelines, automated care plan generation via web scraping agents, and fine-tuned agents for health session monitoring.",
-      "skills": ["Python", "FastAPI", "MongoDB", "PostgreSQL", "OpenAI API", "Playwright", "ScrapeGraphAI"]
-    },
-    {
       "logo": "/assets/images/letsai-logo.png",
       "title": "AI Engineer Intern",
       "company": "LetsAI Solutions",
       "start_date": "Mar 2025",
       "end_date": "Present",
-      "roledesc": "Working as an AI Intern focusing on enhancing enterprise-grade agentic AI systems. Integrating and improving tools like CrewAI, Autogen, and Langflow to build scalable multi-agent architectures. Developing FastAPI backends and managing data storage with PostgreSQL and ChromaDB. Implementing LLM observability and traceability features to optimize A/B testing and decision transparency. Collaborating on system enhancements to improve AI agent performance and reliability.",
+      "roledesc": "Enhancing enterprise-grade agentic AI systems by customizing frameworks like CrewAI, Autogen, and Langflow with modular components and control layers to support scalable, client-specific solutions. Building intelligent agent workflows using Langflow, FastAPI, PostgreSQL, Chroma, MCPs, Composio, and LLMs to deliver flexible, production-ready architectures. Exploring and integrating no-code/low-code platforms to accelerate development and enable non-technical teams to contribute effectively. Managing backend infrastructure, implementing LLM observability and traceability, and optimizing pipelines to improve performance, decision transparency, and reliability in multi-agent environments.",
       "skills": ["Python", "FastAPI", "CrewAI", "Autogen", "Langflow", "ChromaDB", "PostgreSQL", "Alembic"]
+    },
+    {
+      "logo": "/assets/images/evva-logo.png",
+      "title": "AI Engineer Intern",
+      "company": "Evva Health",
+      "start_date": "Oct 2024",
+      "end_date": "Mar 2025",
+      "roledesc": "Led full-cycle development of scalable multi-agent AI systems across healthcare and surveying domains using FastAPI, Python, LLMs, and vector databases to deliver modular, high-performance solutions. Refactored existing pipelines to reduce response latency by 28% and cut inference costs by 12% through prompt optimization and intelligent model routing. Built intelligent agents for behavior tracking and personalized content generation, cutting LLM costs by 12% via prompt optimization and model routing. Automated healthcare data extraction from trusted sources like ClinicalTrials.gov and Amazon to generate accurate, user-centric care plans with minimal manual intervention. Authored comprehensive technical documentation to streamline onboarding, accelerate collaboration, and ensure long-term maintainability.",
+      "skills": ["Python", "FastAPI", "MongoDB", "PostgreSQL", "OpenAI API", "Playwright", "ScrapeGraphAI"]
     }
   ]
 }
