@@ -2,7 +2,7 @@ import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 import json
-from utils import load_markdown_posts
+from utils import blog_posts
 from components import BlogTile, ExperienceTile, SocialTiles
 import dash_svg as svg
 
@@ -15,7 +15,7 @@ except Exception as e:
     data = {'workExperience': []}
 
 # Load recent blog posts
-recent_blogs = load_markdown_posts()[:2]
+recent_blogs = blog_posts[:2]
 
 # Log blog posts for debugging
 for blog in recent_blogs:
@@ -36,7 +36,7 @@ layout = html.Div([
         ),
         SocialTiles(),
         html.P(
-            "I’m a tech enthusiast who just can’t get enough of AI and machine learning — basically, if it’s got code and a bit of brainpower, I’m in. When I’m not busy making bots smarter or wrangling data, I’m probably diving into some book by Camus or Sartre or pretending I can sing well enough to perform (spoiler: I can’t). Balancing tech and creativity keeps things interesting and my brain from turning into a dry circuit board.",
+            "I’m a tech enthusiast who just can’t get enough of AI and machine learning - basically, if it’s got code and a bit of brainpower, I’m in. When I’m not busy making bots smarter or wrangling data, I’m probably diving into some book by Camus or Sartre or pretending I can sing well enough to perform (spoiler: I can’t). Balancing tech and creativity keeps things interesting and my brain from turning into a dry circuit board.",
             className='text-large margin-top-md',
             style={'marginBottom': '0'}
         ),

@@ -2,23 +2,30 @@ import dash
 from dash import html, dcc, Input, Output
 import dash_bootstrap_components as dbc
 import json
+import logging
 from pages import home, blog
 import dash_svg as svg
-from utils import load_markdown_posts
+from utils import blog_posts
 from components import CodeSnippet
+import os
 
-app = dash.Dash(__name__, suppress_callback_exceptions=True)
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+app = dash.Dash(__name__, suppress_callback_exceptions=True, title="Aditya Lakhani")
 
 # Load work experience data from JSON file
+json_path = 'public/data.json'
+logger.info(f"Attempting to load JSON from: {json_path}")
 try:
-    with open('public/data.json', 'r') as f:
+    with open("public/data.json", 'r') as f:
         data = json.load(f)
+    logger.info(f"Loaded workExperience: {len(data.get('workExperience', []))} entries")
 except Exception as e:
-    print(f"Error loading data.json: {e}")
+    logger.error(f"Error loading data.json: {str(e)}")
     data = {'workExperience': []}
 
-# Load blog posts from Markdown files
-blog_posts = load_markdown_posts()
+logger.info(f"Loaded {len(blog_posts)} blog posts")
 
 # Dynamic navbar generator
 def create_navbar(pathname):
@@ -107,7 +114,7 @@ def display_page(pathname):
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
-
+server = app.server
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 8050))

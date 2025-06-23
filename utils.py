@@ -77,3 +77,5 @@ def load_markdown_posts(posts_dir='posts'):
     except ValueError as e:
         print(f"Error sorting posts: {e}")
         return posts
+
+blog_posts = load_markdown_posts()

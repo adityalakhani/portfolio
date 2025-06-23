@@ -10,7 +10,7 @@ def BlogTile(blog, show_tags=True):
         html.P(blog['desc'], className='portfolio-blog-desc'),
         html.Div(
             [html.Span(f"#{tag}", className='portfolio-blog-tag') for tag in blog.get('tags', [])] if show_tags else [],
-            className='flex-gap-sm', style={'marginTop': '0.5rem'}
+            className='flex-gap-sm', style={'marginTop': '0.5rem', 'flex-wrap': 'wrap'}
         )
     ], className='portfolio-blog-card')
 
