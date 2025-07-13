@@ -36,12 +36,12 @@ layout = html.Div([
         ),
         SocialTiles(),
         html.P(
-            "I’m a tech enthusiast who just can’t get enough of AI and machine learning - basically, if it’s got code and a bit of brainpower, I’m in. When I’m not busy making bots smarter or wrangling data, I’m probably diving into some book by Camus or Sartre or pretending I can sing well enough to perform (spoiler: I can’t). Balancing tech and creativity keeps things interesting and my brain from turning into a dry circuit board.",
+            "I'm an AI Engineer who admires tech, wit, literature and linguistics. Most of my time goes into making systems that work better and break more interestingly. When I’m not coding or debugging a stubborn pipeline, I’m either reading Camus, Kafka, Orwell or playing guitar. Balancing tech and creativity keeps things interesting in my brain; or at least keeps it from mistaking motion for direction.",
             className='text-large margin-top-md',
             style={'marginBottom': '0'}
         ),
         html.P(
-            "I’m all about pushing AI to be more helpful and less like that one confused robot in every sci-fi movie. My goal? To get into research and build AI that actually gets humans, not just runs on fancy algorithms. For now, I’m having fun learning, experimenting, and dreaming about a future where AI makes life easier -     and maybe even a little more fun.",
+            "Lately, I’ve been focused on building tools that make complex problems feel a little less intimidating, systems that don’t just process data but actually help make sense of it. It’s a mix of engineering and a bit of art, figuring out how to balance precision with nuance. When things go sideways, I learn more than when they run smoothly! which is exactly what makes the work far from boring.",
             className='text-large margin-top-md',
             style={'marginBottom': '0'}
         )
@@ -79,7 +79,7 @@ layout = html.Div([
     html.Div([
         html.H2("Get in touch", className='text-3xl font-semibold margin-bottom-md'),
         html.P(
-            "If you’re building something cool where my skills can be of some use or just want to nerd out over philosophy and machine learning, hit me up at lakhaniaditya@yahoo.in - always up for a good chat (or a questionable karaoke session).",
+            "If you’re working on something interesting where I can pitch in, or just want to geek out over philosophy and machine learning, drop me a line at lakhaniaditya@yahoo.in. Always up for a good conversation, or an impromptu jam session (guitar optional).",
             className='text-medium margin-bottom-md'
         )
     ], className='portfolio-section margin-bottom-xl')
