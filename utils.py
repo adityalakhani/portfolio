@@ -1,12 +1,18 @@
 import os
 import markdown
+import logging
 import frontmatter
 from datetime import datetime
 
-def load_markdown_posts(posts_dir='posts'):
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def load_markdown_posts(posts_dir='/home/adityalakhani/portfolio/posts/'):
+    logger.info(f"Posts directory: {posts_dir}")
+    logger.info(f"Directory exists: {os.path.exists(posts_dir)}")
     posts = []
     if not os.path.exists(posts_dir):
-        print(f"Posts directory '{posts_dir}' not found.")
+        logger.error(f"Posts directory '{posts_dir}' not found")
         return posts
 
     required_fields = ['title', 'desc', 'date_posted', 'tags', 'slug']

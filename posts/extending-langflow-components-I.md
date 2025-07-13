@@ -16,7 +16,7 @@ Low-code platforms promise faster builds and easier automation—but often fall 
 
 That’s when we discovered **LangFlow**—an open-source, visual tool designed to overcome these exact challenges. In this post, we share our experience with LangFlow, highlighting what worked, what didn’t, and why it’s worth your attention.<br><br>
 
-![](/assets/images/langflow.png)<br><br><br><br>
+![](/assets/images/langflow.png)<br><br>
 
 # Component Rich Arsenal<br><br>
 
@@ -24,7 +24,7 @@ LangFlow brings together a thoughtfully organized and expansive suite of pre-bui
 
 Whether you’re starting with Inputs and Outputs, crafting dynamic Prompts, handling files and documents under Data, or orchestrating model execution through the LLMs—LangFlow offers everything you need to bring your ideas to life. Its support for Vector Stores and Embeddings enables semantic search and contextual understanding, while components like Agents, Memories, and Tools empower developers to build more intelligent, stateful applications.<br><br>
 
-Each node can be dropped into the flow editor and connected seamlessly, allowing for rapid iteration and visual clarity. This structured yet flexible approach empowers developers to prototype rapidly, test different architectures, and build scalable applications—all without writing boilerplate code. The depth and breadth of these built-in components make LangFlow a strong contender for teams working on complex AI-driven solutions.<br><br><br><br>
+Each node can be dropped into the flow editor and connected seamlessly, allowing for rapid iteration and visual clarity. This structured yet flexible approach empowers developers to prototype rapidly, test different architectures, and build scalable applications—all without writing boilerplate code. The depth and breadth of these built-in components make LangFlow a strong contender for teams working on complex AI-driven solutions.<br><br>
 
 # Extending the Components<br><br>
 
@@ -34,7 +34,7 @@ We also got our hands dirty exploring LangFlow’s extensibility and found it re
 
 This ability to extend and adapt components proved especially valuable when working with edge cases or non-standard requirements—situations where built-in options fell just short. LangFlow’s modular architecture allowed us to address those gaps efficiently, whether by tweaking data parsing routines, introducing custom logic gates, or connecting external services not natively supported.<br><br>
 
-The result? A more tailored, controllable development experience—one that bridges the gap between low-code convenience and full-code power.<br><br><br><br>
+The result? A more tailored, controllable development experience—one that bridges the gap between low-code convenience and full-code power.<br><br>
 
 # What did we Customize?<br><br>
 
@@ -48,17 +48,17 @@ The ChromaDB component is primarily based on Langchain’s [`langchain_chroma.ch
 
 **Enhanced Parser Component:** For document ingestion, we built a custom parser to handle case-specific parsing of prompts. This allowed us to extract structured data and relevant context more effectively before passing it into the pipeline—improving downstream LLM performance and the metadata-based filtering from our vector store.<br><br>
 
-**File Handling Enhancements:** LangFlow’s default file input was useful, but we needed more flexibility when it came to outputs from the component. We developed a specialized file component that provides standalone access to file paths in output so that they can be used in other components for the purpose of indexing, retrieval, filtering etc.<br><br><br><br>
+**File Handling Enhancements:** LangFlow’s default file input was useful, but we needed more flexibility when it came to outputs from the component. We developed a specialized file component that provides standalone access to file paths in output so that they can be used in other components for the purpose of indexing, retrieval, filtering etc.<br><br>
 
 # Conclusion<br><br>
 
 LangFlow has proven to be more than just another visual development tool—it’s a versatile platform that strikes a balance between low-code accessibility and developer-level control. Its rich library of components, intuitive interface, and extensibility make it a strong candidate for teams building modern, agentic AI solutions.<br><br>
 
-While no tool is without its limitations, LangFlow’s open-source foundation and modular design open up endless possibilities for customization and innovation. From rapidly assembling workflows to extending components for specialized use cases, it empowers developers to move fast without compromising on flexibility.<br><br><br><br>
+While no tool is without its limitations, LangFlow’s open-source foundation and modular design open up endless possibilities for customization and innovation. From rapidly assembling workflows to extending components for specialized use cases, it empowers developers to move fast without compromising on flexibility.<br><br>
 
 ## REFERENCES:<br><br>
 
-* LangFlow documentation: [https://docs.langflow.org/](https://docs.langflow.org/)  
-* LangFlow Github Repository: [https://github.com/logspace-ai/langflow](https://github.com/logspace-ai/langflow)  
-* ChromaDB documentation: [https://docs.trychroma.com/](https://docs.trychroma.com/)  
+* LangFlow documentation: [https://docs.langflow.org/](https://docs.langflow.org/)
+* LangFlow Github Repository: [https://github.com/logspace-ai/langflow](https://github.com/logspace-ai/langflow)
+* ChromaDB documentation: [https://docs.trychroma.com/](https://docs.trychroma.com/)
 * Langchain Community documentation: [https://python.langchain.com/docs/](https://python.langchain.com/docs/)

@@ -451,7 +451,6 @@ html, body {
     margin-top: 6px;
     display: inline-block;
     font-weight: 500;
-    font-family: var(--font-inter, Inter, sans-serif);
 }
 
 /* Experience tile styles */
@@ -503,7 +502,7 @@ html, body {
     flex: 1 1 0%;
     row-gap: 0.25rem;
     box-sizing: border-box;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .portfolio-experience-date {

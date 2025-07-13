@@ -1,7 +1,6 @@
 import dash
 from dash import html, dcc, Input, Output, callback
 import dash_bootstrap_components as dbc
-from utils import load_markdown_posts
 from components import BlogTile
 from utils import blog_posts
 
@@ -25,7 +24,7 @@ layout = html.Div([
         'justifyContent': 'space-between',
         'alignItems': 'center',
     }),
-    
+
     html.Div(id='blog-list', className='portfolio-section margin-bottom-xl', style={'marginTop': '16px'})
 ])
 

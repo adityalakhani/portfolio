@@ -54,7 +54,7 @@ layout = html.Div([
     html.Div([
         html.H2("Recent Writings", className='text-3xl font-semibold margin-bottom-xs'),
         html.Div(
-            [BlogTile(blog, show_tags=False) for blog in recent_blogs if 'title' in blog] if recent_blogs else 
+            [BlogTile(blog, show_tags=False) for blog in recent_blogs if 'title' in blog] if recent_blogs else
             [html.P("No blog posts available.", className='text-medium text-gray-400 portfolio-blog-post')],
             className='portfolio-blog-card', style={'marginTop': '0'}
         ),
@@ -65,12 +65,12 @@ layout = html.Div([
                 svg.Svg([
                     svg.Path(d="M7 7h10v10"),
                     svg.Path(d="M7 17 17 7")
-                ], 
-                xmlns="http://www.w3.org/2000/svg", 
-                width="14", 
-                height="14", 
-                viewBox="0 0 24 24", 
-                fill="none", 
+                ],
+                xmlns="http://www.w3.org/2000/svg",
+                width="14",
+                height="14",
+                viewBox="0 0 24 24",
+                fill="none",
                 stroke="currentColor",
                 className="lucide lucide-arrow-up-right")
             , className='portfolio-button-icon')
@@ -79,7 +79,7 @@ layout = html.Div([
     html.Div([
         html.H2("Get in touch", className='text-3xl font-semibold margin-bottom-md'),
         html.P(
-            "If you’re building something cool where my skills can be of some use or just want to nerd out over philosophy and machine learning, hit me up at lakhaniaditya3@gmail.com - always up for a good chat (or a questionable karaoke session).",
+            "If you’re building something cool where my skills can be of some use or just want to nerd out over philosophy and machine learning, hit me up at lakhaniaditya@yahoo.in - always up for a good chat (or a questionable karaoke session).",
             className='text-medium margin-bottom-md'
         )
     ], className='portfolio-section margin-bottom-xl')
